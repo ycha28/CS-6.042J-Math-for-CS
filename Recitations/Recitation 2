@@ -1,0 +1,49 @@
+Proof 1. The proof is by contradiction and the well-ordering principle.
+
+Assume that the formula is false. That is, there is some set of integers C where 
+
+C := {n E N where n != 1 | 1 + r + r^2 ... != (1-r^(n+1))/(1-r)}
+
+Since we assumed that the formula was false, C is a nonempty set. By the well-ordering principle, C must have a 
+minimum element, which we call c. The formula is true for all numbers smaller than c.
+
+Let n = 0. Then the formula returns 1 = (1-r)/(1-r), which simplifies to 1 = 1. Therefore, we know that the formula
+is true for n = 0. Since the formula is only true for numbers smaller than c, we know that c > 0. From this, we can
+derive that c - 1 is a nonnegative integer, and since c - 1 is less than c, we can assume that the formula is true
+for c - 1.
+
+Let n = c - 1. Then 1 + r + r^2 ... r^(c - 1) = (1 - r^(c - 1 + 1))/(1 - r)
+                                              = (1 - r^c)/(1 - r)
+                                              
+However, if we add r^c to both sides, we get the following:
+
+1 + r + r^2 ... r^(c-1) + r^c = (1 - r^c)/(1 - r) + r^c
+                              = (1 - r^c + r^c - r^(c + 1)) / (1 - r)
+                              = (1 - r^(c + 1)) / (1 - r)
+                              
+This shows that the formula holds for c after all! Therefore, we found a contradiction, which means that the formula
+must be true.
+
+Proof 2. The proof is by induction.
+
+Let P(n) be the formula:
+
+{n E N where n != 1 | 1 + r + r^2 ... = (1-r^(n+1))/(1-r)}
+
+Base case: P(0) returns 
+1 = (1 - r^(0 + 1))/ (1 - r)
+1 = (1 - r)/(1 - r)
+1 = 1
+
+Therefore, the base case is true.
+
+Inductive step: Assume that P(n) is true. Therefore,
+
+1 + r + r^2 ... r^n = (1 - r^(n + 1)) / (1 - r)
+
+If we add r^(n + 1) to both sides, we get the following:
+
+1 + r + r^2 ... r^n + r^(n + 1) = (1 - r^(n + 1) + r^(n + 1) - r^(n + 2)) / (1 - r)
+                                = (1 - r^(n + 2)) / 1 - r
+
+which proves P(n + 1). So by induction, P(n) is true for all n where n != 1.
