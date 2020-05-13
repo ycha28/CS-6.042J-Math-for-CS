@@ -47,3 +47,31 @@ Thus, regardless of whether we use a sequence where a1 > a2 or a2 > a1, the inse
 This contradicts our original assumption, which means that any sequence of five distinct integers must contain a 3-chain.
 
 **Problem 2**
+Proof by induction.
+
+Let P(n) = for all integers from 0 to n, i^3 = ((n (n + 1))/2)^2.
+
+Base case: 
+When n = 0, i^3 = ((0 (0 + 1))/2)^2
+                = (0)^2
+                = 0
+                
+0^3 = 0, so the base case is valid.
+
+Inductive step:
+Given that P(n) is true, we know the following:
+
+0^3 + 1^3 + ... n^3 = ((n (n + 1))/2)^2
+
+If we add (n + 1)^3 to both sides, we get:
+0^3 + 1^3 + ... n^3 + (n + 1)^3 = (n^2 + n)^2/4 + (n + 1)^2 * (n + 1)
+                                = (n^2 * (n + 1)^2)/4 + (n + 1)^2 * (n + 1)
+                                = (n + 1)^2 * (n^2 + 4n + 4) / 4
+                                = ((n + 1)^2 * (n + 2)^2) / 4
+                                = ((n + 1) * (n + 2)) / 2)^2
+
+Thus, P(n + 1) is true, which means that P(n) implies P(n + 1). Therefore, P(n) is true for all nonnegative integers
+by induction.
+
+
+
