@@ -1,0 +1,24 @@
+Problem 1:
+P1: Increasing the size of the bar by one dimension increases the number of splits by one less than the other dimension.
+
+Proof by induction.
+
+Base case: Let n and m = 1. Increasing m by 1 increases the number of splits from 0 to 1. So the base case holds.
+
+Inductive step:
+Assume P(n, m) is true. Let’s say that we increase n by 1. This will add m additional squares to the chocolate bar. Since each square is connected, this will add m - 1 additional lines that can be split. Thus, the number of additional splits increases by m - 1. The number of splits increases by n - 1 if we increase m by 1. In either case, the number of splits increases by one less than the other dimension, so P(n + 1, m) and P(n, m + 1) are both true.
+
+P2: The total number of remaining splits is (n * m) - 1.
+
+Proof by strong induction.
+
+Base case: Let n and m = 1. In this case, there is nothing to split, as there is only one individual square. P(1) = (1 * 1) - 1 = 0. So the proof holds for the base case.
+
+Inductive step:
+Assume that P(n, m) is true. Then we get P(n, m) = nm - 1. Now consider the following cases:
+Case 1: Increase the size of the chocolate bar by the n dimension. Then we end up adding m additional splits to get a total of nm - 1 + m splits.
+Case 2: Increase the size of the chocolate bar by the m dimension. Then we end up adding n additional splits to get a total of nm - 1 + n splits.
+
+An increase of 1 to the n dimension results in nm - 1 + m splits or m(n + 1) - 1 splits, which is equal to P(n + 1, m). Therefore, P holds true for the n + 1 case as well. 
+
+Problem 2:
