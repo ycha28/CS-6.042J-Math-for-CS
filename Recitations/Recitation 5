@@ -1,0 +1,23 @@
+1.
+a) p = 3, q = 7
+b) n = pq = 21
+c) e where gcd(e, 2 * 6) = 1
+           gcd(e, 12) = 1
+   e = 5
+d) de === 1 mod 12
+   5d === 1 mod 12
+   5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85
+   
+   5d - 12k = 1
+ 
+   d = 5
+   
+   
+message m = 5
+Encryption: m' = rem(5^5, 21)
+                 rem(3125, 21)
+                 17
+                 
+Decryption: m = rem((m')^d, n)
+                rem(17^5, 21)
+                5
